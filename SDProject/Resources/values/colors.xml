@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<color name="Primary">#0B3A42</color>
+	<color name="OnPrimary">#FFFFFF</color>
+	<color name="PrimaryVariant">#115B68</color>
+	<color name="OnPrimaryVariant">#989898</color>
+	<color name="PrimaryDark">#07262B</color>
+	<color name="OnPrimaryDark">#FFFFFF</color>
+	<color name="PrimaryDim">#760B3A42</color>
+	<color name="Accent">#FFB900</color>
+	<color name="OnAccent">#FFFFFF</color>
+	<color name="AccentDark">#CB9401</color>
+	<color name="OnAccentDark">#FFFFFF</color>
+	<color name="Tertiary">#1FC4B8</color>
+	<color name="Surface">#FFFFFF</color>
+	<color name="OnSurface">#1C1C1C</color>
+	<color name="SurfaceVariant">#DFDFDF</color>
+	<color name="OnSurfaceVariant">#676767</color>
+	<color name="SurfaceDim">#76FFFFFF</color>
+	<color name="Error">#CC2222</color>
+	<color name="OnError">#FFFFFF</color>
+	<color name="ErrorVariant">#FFBBBB</color>
+	<color name="OnErrorVariant">#DFDFDF</color>
+	<color name="Warning">#FFB900</color>
+	<color name="Success">#22AA22</color>
+	<color name="OnSuccess">#FFFFFF</color>
+	<color name="SuccessVariant">#BBFFBB</color>
+	<color name="OnSuccessVariant">#DFDFDF</color>
+	<color name="Message">@color/Accent</color>
+	<color name="OnMessage">#000000</color>
+	<color name="OnMessageVariant">#333333</color>
+	<color name="Ripple">#66FFFFFF</color>
+	<color name="RippleOnSurface">#66000000</color>
+	<color name="RippleOnPrimary">#66FFB900</color>
+	<color name="HeaderStart">@color/Primary</color>
+	<color name="HeaderEnd">@color/PrimaryVariant</color>
+	
+	<!-- Material Date Time Picker Colors -->
+	<color name="mdtp_white">@color/Surface</color>
+	<color name="mdtp_background_color">@color/Surface</color>
+	<color name="mdtp_circle_background">@color/Surface</color>
+	<color name="mdtp_circle_color">@color/SurfaceVariant</color>
+	<color name="mdtp_ampm_text_color">@color/OnSurface</color>
+	<color name="mdtp_done_text_color_normal">@color/OnSurface</color>
+	<color name="mdtp_done_text_color_disabled">@color/OnSurfaceVariant</color>
+	<color name="mdtp_numbers_text_color">@color/OnSurface</color>
+	<color name="mdtp_accent_color">@color/Accent</color>
+	<color name="mdtp_accent_color_focused">@color/SurfaceDim</color>
+	<color name="mdtp_accent_color_dark">@color/AccentDark</color>
+	<color name="mdtp_date_picker_text_normal">@color/OnSurface</color>
+	<color name="mdtp_date_picker_text_highlighted">@color/OnSurface</color>
+	<color name="mdtp_date_picker_text_disabled">@color/OnSurfaceVariant</color>
+	<color name="mdtp_date_picker_month_day">@color/OnSurfaceVariant</color>
+	<color name="mdtp_calendar_header">@color/AccentDark</color>
+	<color name="mdtp_calendar_selected_date_text">@color/OnPrimaryVariant</color>
+	<color name="mdtp_button_color">@color/Accent</color>
+</resources>

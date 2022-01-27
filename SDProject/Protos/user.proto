@@ -1,0 +1,96 @@
+syntax = "proto3";
+
+package user;
+
+import "google/protobuf/timestamp.proto";
+
+
+option go_package = "/userpb";
+option csharp_namespace = "GrpcServer.User";
+
+service UserService {
+    // Errors: INTERNAL , NOT_FOUND
+    rpc Login(LoginRequest) returns (LoginResponse) {};
+    // Errors: INTERNAL, ALREADY_EXISISTS -> "occurs when user with same phone number is exists"
+    rpc Register(RegisterRequest) returns (RegisterResponse) {};
+    // Errors: INTERNAL, NOT_FOUND
+    rpc FindUser(FindUserRequest) returns (FindUserResponse) {};
+    // Errors: INTERNAL
+    // editing unique fields like "phone" is not allowed
+    // user should send his/her current password, in order to get permission for edit
+    // for updating password you need to send new password through "password" which is located in "User" message.
+    // and it's essential to send current password of user 
+    // editing "phone" is not allowed
+    rpc EditUser(EditUserRequest) returns (EditUserResponse) {};
+    // only swaping status from "RED" to "GREEN" is allowed
+    // Errors: INTERNAL, PERMISSION_DENIED (user status is not RED), NOT_FOUND (user not found)
+    rpc SwapStatus(SwapStatusRequest) returns (SwapStatusResponse) {};
+}
+
+message User {
+    int32 id = 1;
+    string phone = 2;
+    string name = 3;
+    string family = 4;
+    string NationalCode  = 5;
+    string password = 6;
+    UserStatus UserStatus = 7;
+    google.protobuf.Timestamp birth = 8;
+}
+
+message LoginRequest {
+    string phone = 1;
+    string password = 2;
+}
+
+message LoginResponse {
+    User user = 1;
+}
+
+enum UserStatus {
+    DEFAULT = 0;
+    GREEN = 1;
+    YELLOW = 2;
+    RED = 3;
+}
+
+message RegisterRequest {
+    string phone = 1;
+    string name = 2;
+    string family = 3;
+    string NationalCode  = 4;
+    string password = 5;
+    UserStatus UserStatus = 6;
+    google.protobuf.Timestamp birth = 7;
+}
+
+message RegisterResponse {
+    User user = 1;
+}
+
+message FindUserRequest {
+    int32 id = 1;
+}
+
+message FindUserResponse {
+    User user = 1;
+}
+
+message EditUserRequest {
+    User user = 1;
+    string current_password = 2;
+}
+
+message EditUserResponse {
+    User user = 1;
+}
+
+message SwapStatusRequest {
+    int32 user_id = 1;
+    // for authorization purposes
+    string current_password = 2;
+}
+
+message SwapStatusResponse {
+    User user = 1;
+}

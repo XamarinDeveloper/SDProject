@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    
+    <com.scwang.wave.MultiWaveHeader
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:mwhIsRunning="true"
+        app:mwhGradientAngle="90"
+        app:mwhWaveHeight="50dp"
+        app:mwhColorAlpha="1"
+        app:mwhStartColor="@color/HeaderStart"
+        app:mwhCloseColor="@color/HeaderEnd"
+        app:mwhWaves=" 70,10,1.4,1,-50"
+        android:id="@+id/waveHeader"/>
+
+    <com.scwang.wave.MultiWaveHeader
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:mwhIsRunning="true"
+        app:mwhGradientAngle="90"
+        app:mwhWaveHeight="50dp"
+        app:mwhColorAlpha="0.6"
+        app:mwhStartColor="@color/HeaderStart"
+        app:mwhCloseColor="@color/HeaderEnd"
+        app:mwhWaves=" 70,10,1.4,1,-50
+        100,5,1.4,0.5,30
+        420,0,1.15,1,-20"
+        android:id="@+id/waveHeaderBack"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

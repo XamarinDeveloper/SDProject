@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:id="@+id/container">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="24dp"
+        android:id="@+id/statusbarPlaceholder"/>
+
+    <View
+        android:layout_width="@dimen/auto"
+        android:layout_height="@dimen/auto"
+        app:layout_constraintHeight_percent="@dimen/button_next_previous_height_percent"
+        app:layout_constraintTop_toBottomOf="@id/header"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="@dimen/content_top_margin"
+        android:id="@+id/nextPrevButtonsMaxHeight"/>
+
+    <View
+        android:layout_width="@dimen/auto"
+        android:layout_height="@dimen/auto"
+        app:layout_constraintWidth_percent="@dimen/button_next_previous_width_percent"
+        app:layout_constraintHorizontal_bias="@dimen/button_previous_horizontal_bias"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/prevButtonMaxWidth"/>
+
+    <View
+        android:layout_width="@dimen/auto"
+        android:layout_height="@dimen/auto"
+        app:layout_constraintWidth_percent="@dimen/button_next_previous_width_percent"
+        app:layout_constraintHorizontal_bias="@dimen/button_next_horizontal_bias"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/nextButtonMaxWidth"/>
+    
+    <ImageButton
+        android:layout_width="@dimen/auto"
+        android:layout_height="@dimen/auto"
+        app:layout_constraintTop_toTopOf="@id/nextPrevButtonsMaxHeight"
+        app:layout_constraintBottom_toBottomOf="@id/nextPrevButtonsMaxHeight"
+        app:layout_constraintLeft_toLeftOf="@id/prevButtonMaxWidth"
+        app:layout_constraintRight_toRightOf="@id/prevButtonMaxWidth"
+        app:layout_constraintDimensionRatio="1:1"
+        style="@style/OnSurfaceItemBackground"
+        android:padding="@dimen/button_back_padding"
+        android:src="@drawable/ic_previous"
+        android:scaleType="fitCenter"
+        android:tint="@color/tint_image_button"
+        android:visibility="visible"
+        android:contentDescription="@string/back_button_description"
+        android:id="@+id/prevButton"/>
+    
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/nextPrevButtonsMaxHeight"
+        app:layout_constraintBottom_toBottomOf="@id/nextPrevButtonsMaxHeight"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        style="@style/OnSurfaceItemBackground"
+        android:padding="@dimen/text_view_padding"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/Primary"
+        android:drawableLeft="@drawable/ic_calendar"
+        android:drawablePadding="@dimen/text_view_drawable_padding"
+        android:drawableTint="@color/OnSurfaceVariant"
+        android:background="?android:attr/selectableItemBackground"
+        android:clickable="true"
+        android:id="@+id/dateTextView"/>
+
+    <ImageButton
+        android:layout_width="@dimen/auto"
+        android:layout_height="@dimen/auto"
+        app:layout_constraintTop_toTopOf="@id/nextPrevButtonsMaxHeight"
+        app:layout_constraintBottom_toBottomOf="@id/nextPrevButtonsMaxHeight"
+        app:layout_constraintLeft_toLeftOf="@id/nextButtonMaxWidth"
+        app:layout_constraintRight_toRightOf="@id/nextButtonMaxWidth"
+        app:layout_constraintDimensionRatio="1:1"
+        style="@style/OnSurfaceItemBackground"
+        android:padding="@dimen/button_back_padding"
+        android:src="@drawable/ic_next"
+        android:scaleType="fitCenter"
+        android:tint="@color/tint_image_button"
+        android:visibility="visible"
+        android:contentDescription="@string/back_button_description"
+        android:id="@+id/nextButton"/>
+
+    <androidx.constraintlayout.widget.Barrier
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="prevButton,dateTextView,nextButton"
+        android:id="@+id/topElementsBarrier"/>
+    
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/auto"
+        app:layout_constraintTop_toBottomOf="@id/topElementsBarrier"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="@dimen/content_top_margin"
+        android:id="@+id/contentRefreshLayout">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/contentRecyclerView"/>
+    
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+    
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/auto"
+        app:layout_constraintHeight_percent="@dimen/header_height_percent"
+        layout="@layout/header_back"
+        android:id="@+id/header"/>
+    
+    <include
+        android:layout_width="@dimen/auto"
+        android:layout_height="@dimen/auto"
+        app:layout_constraintTop_toBottomOf="@id/statusbarPlaceholder"
+        app:layout_constraintLeft_toLeftOf="@id/header"
+        app:layout_constraintRight_toRightOf="@id/header"
+        app:layout_constraintBottom_toBottomOf="@id/header"
+        android:layout_marginBottom="@dimen/waves_height"
+        layout="@layout/header_content"
+        android:animateLayoutChanges="true"
+        android:id="@+id/headerSpace"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

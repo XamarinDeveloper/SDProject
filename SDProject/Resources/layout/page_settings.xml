@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true">
+    
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/waves_height"
+        app:layout_constraintHeight_percent="@dimen/header_height_percent"
+        android:id="@+id/headerPlaceholder"/>
+    
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:layout_width="@dimen/auto"
+        android:layout_height="wrap_content"
+        app:layout_constraintWidth_percent="@dimen/content_width_percent"
+        app:layout_constraintTop_toBottomOf="@id/headerPlaceholder"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="@dimen/switch_top_margin"
+        android:text="@string/notification_switch"
+        android:id="@+id/notificationSwitch"/>
+
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:layout_width="@dimen/auto"
+        android:layout_height="wrap_content"
+        app:layout_constraintWidth_percent="@dimen/content_width_percent"
+        app:layout_constraintTop_toBottomOf="@id/notificationSwitch"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="@dimen/switch_between_margin"
+        android:text="@string/two_factor_authentication_switch"
+        android:id="@+id/twoFactorAuthSwitch"/>
+
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:layout_width="@dimen/auto"
+        android:layout_height="wrap_content"
+        app:layout_constraintWidth_percent="@dimen/content_width_percent"
+        app:layout_constraintTop_toBottomOf="@id/twoFactorAuthSwitch"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="@dimen/switch_between_margin"
+        android:text="@string/location_access_switch"
+        android:id="@+id/locationAccessSwitch"/>
+    
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:layout_width="@dimen/auto"
+        android:layout_height="wrap_content"
+        app:layout_constraintWidth_percent="@dimen/content_width_percent"
+        app:layout_constraintTop_toBottomOf="@id/locationAccessSwitch"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="@dimen/switch_between_margin"
+        android:text="@string/use_biometric_switch"
+        android:id="@+id/useBiometricSwitch"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="@dimen/auto"
+        android:layout_height="wrap_content"
+        app:layout_constraintWidth_percent="@dimen/content_width_percent"
+        app:layout_constraintTop_toBottomOf="@id/useBiometricSwitch"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="@dimen/switch_button_between_margin"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:text="@string/faq_button"
+        android:textAllCaps="false"
+        app:backgroundTint="@color/Accent"
+        app:elevation="5dp"
+        android:id="@+id/faqButton"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="@dimen/auto"
+        android:layout_height="wrap_content"
+        app:layout_constraintWidth_percent="@dimen/content_width_percent"
+        app:layout_constraintTop_toBottomOf="@id/faqButton"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="@dimen/button_between_margin"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:text="@string/about_button"
+        android:textAllCaps="false"
+        app:elevation="5dp"
+        android:id="@+id/aboutButton"/>
+
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/aboutButton"
+        layout="@layout/padding_bottom"
+        android:id="@+id/bottomPadding"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

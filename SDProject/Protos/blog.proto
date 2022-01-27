@@ -1,0 +1,37 @@
+﻿syntax = "proto3";
+
+package blog;
+
+
+option go_package = "/blogpb";
+option csharp_namespace = "GrpcServer.Blog";
+
+service BlogService {
+    rpc FindAll(FindAllRequest) returns (FindAllResponse) {};
+    rpc Find(FindRequest) returns (FindResponse) {};
+}
+
+
+message Post {
+    int32 id = 1;
+    string image_url = 2;
+    string title = 3;
+    string abstract = 4;
+    string body = 5;
+}
+
+message FindAllRequest {
+
+}
+
+message FindAllResponse {
+    repeated Post posts = 1;
+}
+
+message FindRequest {
+    int32 post_id = 1;
+}
+
+message FindResponse {
+    Post post = 1;
+}

@@ -1,0 +1,125 @@
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:app="http://schemas.android.com/apk/res-auto">
+	<style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+		<item name="colorPrimary">@color/Primary</item>
+		<item name="colorOnPrimary">@color/OnPrimary</item>
+		<item name="colorPrimaryVariant">@color/PrimaryVariant</item>
+		<item name="colorPrimaryDark">@color/PrimaryDark</item>
+		<item name="colorAccent">@color/Accent</item>
+		<item name="colorOnSecondary">@color/OnAccent</item>
+		<item name="colorAccentDark">@color/AccentDark</item>
+		<item name="colorSurface">@color/Surface</item>
+		<item name="colorOnSurface">@color/OnSurface</item>
+		<item name="colorSurfaceVariant">@color/SurfaceVariant</item>
+		<item name="colorOnSurfaceVariant">@color/OnSurfaceVariant</item>
+		<item name="colorSurfaceDim">@color/SurfaceDim</item>
+		<item name="colorError">@color/Error</item>
+
+		<item name="colorControlHighlight">@color/Ripple</item>
+
+		<item name="android:fontFamily">@font/iransans</item>
+		<item name="android:textColorPrimary">@color/Primary</item>
+		<item name="android:textColor">@color/Primary</item>
+
+		<item name="android:layoutDirection">rtl</item>
+		<item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
+		<item name="android:windowIsTranslucent">true</item>
+		<item name="android:windowTranslucentStatus">true</item>
+
+		<item name="textInputStyle">@style/TextInputStyle.Filled</item>
+	</style>
+	<style name="TextInputStyle.Filled" parent="Widget.MaterialComponents.TextInputLayout.FilledBox.Dense">
+
+	</style>
+	<style name="TextInputStyle.Outlined" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+
+	</style>
+
+	<style name="OnSurfaceRipple" parent="AppTheme">
+		<item name="colorControlHighlight">@color/RippleOnSurface</item>
+	</style>
+
+	<style name="OnSurfaceItemBackground">
+		<item name="android:theme">@style/OnSurfaceRipple</item>
+		<item name="android:background">?android:attr/selectableItemBackgroundBorderless</item>
+	</style>
+
+	<style name="AppTheme.Dark" parent="Theme.MaterialComponents.Light.NoActionBar">
+		<item name="colorPrimary">@color/Surface</item>
+		<item name="colorOnPrimary">@color/OnSurface</item>
+		<item name="colorPrimaryVariant">@color/SurfaceVariant</item>
+		<item name="colorPrimaryDark">@color/Surface</item>
+		<item name="colorAccent">@color/Accent</item>
+		<item name="colorOnSecondary">@color/Primary</item>
+		<item name="colorAccentDark">@color/AccentDark</item>
+		<item name="colorSurface">@color/Primary</item>
+		<item name="colorOnSurface">@color/OnPrimary</item>
+		<item name="colorSurfaceVariant">@color/PrimaryVariant</item>
+		<item name="colorOnSurfaceVariant">@color/OnPrimaryVariant</item>
+		<item name="colorSurfaceDim">@color/PrimaryDim</item>
+		<item name="colorError">@color/Error</item>
+
+		<item name="colorControlHighlight">@color/Ripple</item>
+
+		<item name="android:fontFamily">@font/iransans</item>
+		<item name="android:textColorPrimary">@color/OnPrimary</item>
+		<item name="android:textColor">@color/OnPrimary</item>
+
+		<item name="android:layoutDirection">rtl</item>
+		<item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
+		<!--<item name="android:windowIsTranslucent">true</item>-->
+		<item name="android:windowTranslucentStatus">true</item>
+
+		<item name="textInputStyle">@style/TextInputStyle.Filled.Dark</item>
+	</style>
+	<style name="TextInputStyle.Filled.Dark" parent="Widget.MaterialComponents.TextInputLayout.FilledBox.Dense">
+
+	</style>
+	<style name="TextInputStyle.Outlined.Dark" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+
+	</style>
+
+	<style name="MaterialButtonStyle.Accept" parent="Widget.MaterialComponents.Button">
+		<item name="materialThemeOverlay">@style/MaterialButtonStyle.Accept.TextColor</item>
+	</style>
+
+	<style name="MaterialButtonStyle.Accept.TextColor">
+		<item name="colorPrimary">@color/Success</item>
+		<item name="colorSecondary">@color/Success</item>
+		<item name="colorSurface">@color/Success</item>
+		<item name="colorOnPrimary">@color/OnSuccess</item>
+		<item name="colorOnSecondary">@color/OnSuccess</item>
+		<item name="colorOnSurface">@color/OnSuccess</item>
+	</style>
+
+	<style name="MaterialButtonStyle.IconOnly" parent="Widget.MaterialComponents.Button">
+		<item name="iconPadding">0dp</item>
+		<item name="iconGravity">textStart</item>
+		<item name="android:insetTop">0dp</item>
+		<item name="android:insetBottom">0dp</item>
+		<item name="android:paddingLeft">12dp</item>
+		<item name="android:paddingRight">12dp</item>
+		<item name="android:minWidth">48dp</item>
+		<item name="android:minHeight">48dp</item>
+		<item name="android:background">@null</item>
+	</style>
+
+	<style name="roundedImageView" parent="">
+		<item name="cornerFamily">rounded</item>
+		<item name="cornerSize">0dp</item>
+		<item name="cornerSizeTopRight">@dimen/list_item_corner_radius</item>
+		<item name="cornerSizeBottomRight">@dimen/list_item_corner_radius</item>
+	</style>
+
+	<style name="AppTheme.Splash" parent="@style/AppTheme.Dark">
+		<item name="android:windowBackground">@drawable/splash_screen</item>
+	</style>
+	<!--<style name="AppTheme.Splash" parent="Theme.SplashScreen">
+		<item name="windowSplashScreenBackground">@color/Primary</item>
+		<item name="windowSplashScreenAnimatedIcon">@drawable/logo_full</item>
+		<item name="postSplashScreenTheme">@style/AppTheme.Dark</item>
+		<item name="android:windowSplashScreenIconBackgroundColor">@color/Surface</item>
+
+		<item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
+		<item name="android:windowTranslucentStatus">true</item>
+	</style>-->
+</resources>

@@ -1,0 +1,52 @@
+﻿syntax = "proto3";
+
+package report;
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/wrappers.proto";
+
+option go_package = "/reportpb";
+option csharp_namespace = "GrpcServer.Report";
+
+service ReportService {
+    // Errors: INTERNALE
+    // when new report created, the status of user becomes "RED"
+    rpc CreateReport(CreateReportRequest) returns (CreateReportResponse) {};
+    // returns user's open reports by user_id
+    // Errors: INTERNAL, NOT_FOUND (user not_found)
+    rpc UserOpenReports(UserOpenReportsRequest) returns (UserOpenReportsResponse) {};
+}
+
+// there are 2 types of reports
+// 1. user currenty is in danger
+// in this case "long", "lat" should be send and "address", "until" fields are not allowed
+// "until" field will set as current time automaticaly
+// 2. user thinks he will be in danger if he didn't changed his status to "GREEN"
+// in this case "address" and "until" are neccesury fields and "long","lat" are not allowed
+message Report {
+    int32 id = 1;
+    string subject = 2;
+    google.protobuf.DoubleValue long = 3;
+    google.protobuf.DoubleValue lat = 4;
+    string address = 5;
+    int32 user_id = 6;
+    google.protobuf.Timestamp until = 7;
+}
+
+message CreateReportRequest {
+    Report report = 1;
+    // for authorization purposes
+    string current_password = 2;
+}
+
+message CreateReportResponse {
+    Report report = 1;
+}
+
+message UserOpenReportsRequest {
+    int32 user_id = 1;
+}
+
+message UserOpenReportsResponse {
+    repeated Report reports = 1;
+}

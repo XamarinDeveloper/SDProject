@@ -1,0 +1,43 @@
+syntax = "proto3";
+
+package schedule;
+
+import "google/protobuf/timestamp.proto";
+
+option go_package = "/schedulepb";
+option csharp_namespace = "GrpcServer.Counsell";
+
+service ScheduleService {
+    rpc Create(CreateRequest) returns (CreateResponse) {};
+    rpc FindAllSchedules(FindAllSchedulesRequest) returns (FindAllSchedulesResponse) {}; 
+}
+
+message Period {
+    google.protobuf.Timestamp start = 1;
+    google.protobuf.Timestamp end = 2;
+}
+
+message Schedule {
+    int32 consultant_id = 1;
+    int32 user_id = 2;
+    Period period = 3;
+}
+
+message CreateRequest {
+    int32 consultant_id = 1;
+    Period period = 2;
+    int32 each = 3;
+}
+
+message CreateResponse {
+    
+}
+
+message FindAllSchedulesRequest {
+    int32 consultant_id = 1;
+    google.protobuf.Timestamp start = 2;
+}
+
+message FindAllSchedulesResponse {
+    repeated Schedule schedules = 1;
+}

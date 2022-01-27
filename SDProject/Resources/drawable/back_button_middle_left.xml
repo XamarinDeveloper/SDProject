@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ripple
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="@color/Ripple">
+
+	<item android:id="@android:id/mask">
+		<shape android:shape="rectangle">
+			<corners
+				android:radius="0.1dp"
+				android:bottomLeftRadius="@dimen/main_button_normal_corner_radius"
+				android:bottomRightRadius="@dimen/main_button_normal_corner_radius"
+				android:topLeftRadius="@dimen/main_button_normal_corner_radius"
+				android:topRightRadius="@dimen/main_button_normal_corner_radius" />
+
+			<solid android:color="?android:colorAccent" />
+		</shape>
+	</item>
+
+	<item>
+		<shape android:shape="rectangle">
+			<corners
+				android:radius="0.1dp"
+				android:bottomLeftRadius="@dimen/main_button_normal_corner_radius"
+				android:bottomRightRadius="@dimen/main_button_normal_corner_radius"
+				android:topLeftRadius="@dimen/main_button_normal_corner_radius"
+				android:topRightRadius="@dimen/main_button_normal_corner_radius" />
+
+			<solid android:color="@color/back_main_button" />
+		</shape>
+	</item>
+
+</ripple>

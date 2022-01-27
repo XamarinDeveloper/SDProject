@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    android:animateLayoutChanges="true">
+
+    <View
+        android:layout_width="@dimen/auto"
+        android:layout_height="@dimen/auto"
+        app:layout_constraintHeight_percent="@dimen/header_logo_height_percent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:id="@+id/logoMaxHeight"/>
+
+    <View
+        android:layout_width="@dimen/auto"
+        android:layout_height="@dimen/auto"
+        app:layout_constraintWidth_percent="@dimen/header_logo_width_percent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:id="@+id/logoMaxWidth"/>
+
+    <ImageView
+        android:layout_width="@dimen/auto"
+        android:layout_height="@dimen/auto"
+        app:layout_constraintTop_toTopOf="@id/logoMaxHeight"
+        app:layout_constraintBottom_toBottomOf="@id/logoMaxHeight"
+        app:layout_constraintLeft_toLeftOf="@id/logoMaxWidth"
+        app:layout_constraintRight_toRightOf="@id/logoMaxWidth"
+        app:layout_constraintDimensionRatio="310:128"
+        android:src="@drawable/logo_text"
+        android:contentDescription="@string/app_logo_description"
+        android:id="@+id/logo"/>
+            
+    <View
+        android:layout_width="@dimen/auto"
+        android:layout_height="@dimen/auto"
+        app:layout_constraintHeight_percent="@dimen/header_button_back_height_percent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:id="@+id/backButtonMaxHeight"/>
+
+    <View
+        android:layout_width="@dimen/auto"
+        android:layout_height="@dimen/auto"
+        app:layout_constraintWidth_percent="@dimen/header_button_back_width_percent"
+        app:layout_constraintHorizontal_bias="@dimen/header_button_back_horizontal_bias"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/logo"
+        android:id="@+id/backButtonMaxWidth"/>
+
+    <ImageButton
+        android:layout_width="@dimen/auto"
+        android:layout_height="@dimen/auto"
+        app:layout_constraintTop_toTopOf="@id/backButtonMaxHeight"
+        app:layout_constraintBottom_toBottomOf="@id/backButtonMaxHeight"
+        app:layout_constraintLeft_toLeftOf="@id/backButtonMaxWidth"
+        app:layout_constraintRight_toRightOf="@id/backButtonMaxWidth"
+        app:layout_constraintDimensionRatio="1:1"
+        android:padding="@dimen/button_back_padding"
+        android:src="@drawable/ic_back"
+        android:scaleType="fitCenter"
+        android:tint="@color/OnPrimary"
+        android:background="?android:attr/selectableItemBackgroundBorderless"
+        android:visibility="visible"
+        android:contentDescription="@string/back_button_description"
+        android:id="@+id/backButton"/>
+            
+    <View
+        android:layout_width="@dimen/auto"
+        android:layout_height="@dimen/auto"
+        app:layout_constraintHeight_percent="@dimen/header_status_height_percent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:id="@+id/statusMaxHeight"/>
+
+    <View
+        android:layout_width="@dimen/auto"
+        android:layout_height="@dimen/auto"
+        app:layout_constraintWidth_percent="@dimen/header_status_width_percent"
+        app:layout_constraintHorizontal_bias="@dimen/header_status_horizontal_bias"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/statusMaxWidth"/>
+
+    <com.google.android.material.internal.CheckableImageButton
+        android:layout_width="@dimen/auto"
+        android:layout_height="@dimen/auto"
+        app:layout_constraintTop_toTopOf="@id/statusMaxHeight"
+        app:layout_constraintBottom_toBottomOf="@id/statusMaxHeight"
+        app:layout_constraintLeft_toLeftOf="@id/statusMaxWidth"
+        app:layout_constraintRight_toRightOf="@id/statusMaxWidth"
+        app:layout_constraintDimensionRatio="1:1"
+        android:src="@drawable/back_status"
+        android:background="@null"
+        android:visibility="invisible"
+        android:id="@+id/status"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

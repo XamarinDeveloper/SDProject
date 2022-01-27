@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+package center;
+
+
+option go_package = "/centerpb";
+option csharp_namespace = "GrpcServer.Counsell";
+
+service CenterService {
+    rpc FindAll(FindAllRequest) returns (FindAllResponse) {};
+    rpc Find(FindRequest) returns (FindResponse) {};
+}
+
+message Center {
+    int32 id = 1;
+    string name = 2;
+    string website = 3;
+    string telephone = 4;
+    string sms = 5;
+    string address = 6;
+}
+
+message FindAllRequest {
+
+}
+
+message FindAllResponse {
+    repeated Center centers = 1;
+}
+
+message FindRequest {
+    int32 center_id = 1;
+}
+
+message FindResponse {
+    Center center = 1;
+}

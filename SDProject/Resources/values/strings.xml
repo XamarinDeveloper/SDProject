@@ -1,0 +1,48 @@
+<resources>
+    <string name="app_name">خط زندگی</string>
+	<string name="first_button">دیده بان</string>
+	<string name="second_button">مشاوره برخط</string>
+	<string name="third_button">مراکز مشاوره</string>
+	<string name="fourth_button">مطالعه</string>
+	<string name="fifth_button">به زودی</string>
+	<string name="sixth_button">به زودی</string>
+	<string name="phone_number_hint">شماره همراه</string>
+	<string name="first_name_hint">نام</string>
+	<string name="last_name_hint">نام خانوادگی</string>
+	<string name="national_id_hint">کد ملی</string>
+	<string name="birthday_hint">تاریخ تولد</string>
+	<string name="password_hint">رمز عبور</string>
+	<string name="new_password_hint">رمز عبور جدید</string>
+	<string name="password_confirm_hint">تکرار رمز عبور</string>
+	<string name="modify_button">ویرایش حساب</string>
+	<string name="logout_button">خروج از حساب</string>
+	<string name="login_tab">ورود</string>
+	<string name="register_tab">ثبت نام</string>
+	<string name="login_button">ورود به حساب</string>
+	<string name="register_button">ساخت حساب</string>
+	<string name="forgot_password">رمز عبور خود را فراموش کرده اید؟</string>
+	<string name="notification_switch">اعلان ها</string>
+	<string name="two_factor_authentication_switch">احراز هویت دو مرحله ای</string>
+	<string name="location_access_switch">دسترسی به موقعیت مکانی</string>
+	<string name="use_biometric_switch">ورود با اثرانگشت یا تشخیص چهره</string>
+	<string name="faq_button">سوالات متداول</string>
+	<string name="about_button">درباره ما</string>
+	<string name="now_tab">الان</string>
+	<string name="future_tab">در آینده</string>
+	<string name="danger_type_hint">نوع خطر</string>
+	<string name="wait_until_hint">احتمال می‌دهید کی در خطر باشید</string>
+	<string name="address_hint">آدرس</string>
+	<string name="danger_now_button">ثبت خطر</string>
+	<string name="danger_future_button">ثبت خطر احتمالی</string>
+
+	<string name="app_logo_description">لوگو برنامه</string>
+	<string name="back_button_description">دکمه بازگشت</string>
+
+	<!-- DO NOT TRANSLATE -->
+	<string name="mdtp_radial_numbers_typeface" translatable="false">iransans</string>
+	<!-- DO NOT TRANSLATE -->
+	<string name="mdtp_sans_serif" translatable="false">iransans</string>
+
+	<!-- DO NOT TRANSLATE -->
+	<string name="mdtp_day_of_week_label_typeface" translatable="false">iransans</string>
+</resources>

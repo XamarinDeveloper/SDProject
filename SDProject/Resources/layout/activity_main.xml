@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:background="@color/Surface"
+    android:id="@+id/container">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:animateLayoutChanges="true">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="24dp"
+            android:id="@+id/statusbarPlaceholder"/>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/auto"
+            app:layout_constraintTop_toBottomOf="@id/headerSpace"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:animateLayoutChanges="true"
+            android:fillViewport="true"
+            android:visibility="visible"
+            android:id="@+id/homePageScroll">
+
+            <include
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                layout="@layout/page_home"
+                android:id="@+id/homePageLayout"/>
+
+        </androidx.core.widget.NestedScrollView>
+        
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/auto"
+            app:layout_constraintTop_toBottomOf="@id/headerSpace"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:animateLayoutChanges="true"
+            android:fillViewport="true"
+            android:visibility="gone"
+            android:id="@+id/profilePageScroll">
+
+            <include
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                layout="@layout/page_profile"
+                android:id="@+id/profilePageLayout"/>
+
+        </androidx.core.widget.NestedScrollView>
+        
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/auto"
+            app:layout_constraintTop_toBottomOf="@id/headerSpace"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:animateLayoutChanges="true"
+            android:fillViewport="true"
+            android:visibility="gone"
+            android:id="@+id/settingsPageScroll">
+
+            <include
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                layout="@layout/page_settings"
+                android:id="@+id/settingsPageLayout"/>
+
+        </androidx.core.widget.NestedScrollView>
+        
+        <include
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/auto"
+            app:layout_constraintHeight_percent="@dimen/header_height_percent"
+            layout="@layout/header_back"
+            android:id="@+id/header"/>
+    
+        <include
+            android:layout_width="@dimen/auto"
+            android:layout_height="@dimen/auto"
+            app:layout_constraintTop_toBottomOf="@id/statusbarPlaceholder"
+            app:layout_constraintLeft_toLeftOf="@id/header"
+            app:layout_constraintRight_toRightOf="@id/header"
+            app:layout_constraintBottom_toBottomOf="@id/header"
+            android:layout_marginBottom="@dimen/waves_height"
+            layout="@layout/header_content"
+            android:animateLayoutChanges="true"
+            android:id="@+id/headerSpace"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.bottomappbar.BottomAppBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:paddingTop="@dimen/bottom_bar_padding"
+        android:paddingBottom="@dimen/bottom_bar_padding"
+        app:backgroundTint="@color/Primary"
+        app:fabCradleMargin="@dimen/fab_cardle_margin"
+        app:fabCradleRoundedCornerRadius="@dimen/fab_cardle_corner_radius"
+        android:id="@+id/bottomAppBar">
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="@dimen/activity_horizontal_margin"
+            android:background="@android:color/transparent"
+            app:menu="@menu/navigation"
+            app:labelVisibilityMode="unlabeled"
+            app:itemIconTint="@drawable/navigation_item_color"
+            app:itemRippleColor="@color/Accent"
+            android:id="@+id/navigationView" />
+
+    </com.google.android.material.bottomappbar.BottomAppBar>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_home"
+        app:backgroundTint="@color/Accent"
+        app:layout_anchor="@id/bottomAppBar"
+        app:elevation="5dp"
+        android:id="@+id/navigationHome"/>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,0 +1,26 @@
+﻿<resources>
+	<dimen name="header_height_percent">0.25</dimen>
+	<dimen name="content_width_percent">0.8</dimen>
+	<dimen name="login_inputs_max_height_percent">0.6</dimen>
+	<dimen name="main_button_width_percent">0.4</dimen>
+	<dimen name="main_button_height_percent">0.25</dimen>
+	<dimen name="main_button_left_column_horizontal_bias">0.11</dimen>
+	<dimen name="main_button_right_column_horizontal_bias">0.89</dimen>
+	<dimen name="main_button_first_row_vecrtical_bias">0.05</dimen>
+	<dimen name="main_button_second_row_vecrtical_bias">0.50</dimen>
+	<dimen name="main_button_third_row_vecrtical_bias">0.95</dimen>
+	<dimen name="header_logo_height_percent">0.6</dimen>
+	<dimen name="header_logo_width_percent">0.3</dimen>
+	<dimen name="header_button_back_height_percent">0.6</dimen>
+	<dimen name="header_button_back_width_percent">0.1</dimen>
+	<dimen name="header_button_back_horizontal_bias">0.2</dimen>
+	<dimen name="header_status_height_percent">0.6</dimen>
+	<dimen name="header_status_width_percent">0.09</dimen>
+	<dimen name="header_status_horizontal_bias">0.75</dimen>
+	<dimen name="watcher_inputs_max_height_percent">1</dimen>
+	<dimen name="watcher_inputs_vecrtical_bias">0</dimen>
+	<dimen name="button_previous_horizontal_bias">0.15</dimen>
+	<dimen name="button_next_horizontal_bias">0.85</dimen>
+	<dimen name="button_next_previous_height_percent">0.07</dimen>
+	<dimen name="button_next_previous_width_percent">0.1</dimen>
+</resources>

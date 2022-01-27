@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:id="@+id/container">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="24dp"
+        android:id="@+id/statusbarPlaceholder"/>
+    
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/auto"
+        app:layout_constraintTop_toBottomOf="@id/headerSpace"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:animateLayoutChanges="true"
+        android:fillViewport="true"
+        android:id="@+id/contentScrollView">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/post_body_bottom_margin"
+            android:animateLayoutChanges="true"
+            android:id="@+id/content">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/waves_height"
+                android:id="@+id/wavesPlaceHolder"/>
+
+            <TextView
+                android:layout_width="@dimen/auto"
+                android:layout_height="wrap_content"
+                app:layout_constraintWidth_percent="@dimen/content_width_percent"
+                app:layout_constraintTop_toBottomOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/aboutUsAndroidTitle"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:text="تیم برنامه‌نویسی خط زندگی"
+                android:textAlignment="center"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textStyle="bold"
+                android:justificationMode="inter_word"
+                android:id="@+id/aboutUsTitle"/>
+
+            <TextView
+                android:layout_width="@dimen/auto"
+                android:layout_height="wrap_content"
+                app:layout_constraintWidth_percent="@dimen/content_width_percent"
+                app:layout_constraintTop_toBottomOf="@id/aboutUsTitle"
+                app:layout_constraintBottom_toTopOf="@id/aboutUsAndroid"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginTop="@dimen/post_image_title_body_between_margin"
+                android:text="برنامه‌نویسی اندروید"
+                android:textAlignment="center"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/PrimaryVariant"
+                android:textStyle="bold"
+                android:justificationMode="inter_word"
+                android:id="@+id/aboutUsAndroidTitle"/>
+
+            <TextView
+                android:layout_width="@dimen/auto"
+                android:layout_height="wrap_content"
+                app:layout_constraintWidth_percent="@dimen/content_width_percent"
+                app:layout_constraintTop_toBottomOf="@id/aboutUsAndroidTitle"
+                app:layout_constraintBottom_toTopOf="@id/aboutUsServerTitle"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginTop="@dimen/post_image_title_body_between_margin"
+                android:text="سید مجتبی مدرسی"
+                android:textAlignment="center"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/Accent"
+                android:textStyle="bold"
+                android:justificationMode="inter_word"
+                android:id="@+id/aboutUsAndroid"/>
+
+            <TextView
+                android:layout_width="@dimen/auto"
+                android:layout_height="wrap_content"
+                app:layout_constraintWidth_percent="@dimen/content_width_percent"
+                app:layout_constraintTop_toBottomOf="@id/aboutUsAndroid"
+                app:layout_constraintBottom_toTopOf="@id/aboutUsServer"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginTop="@dimen/post_image_title_body_between_margin"
+                android:text="برنامه‌نویسی سرور"
+                android:textAlignment="center"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/PrimaryVariant"
+                android:textStyle="bold"
+                android:justificationMode="inter_word"
+                android:id="@+id/aboutUsServerTitle"/>
+
+            <TextView
+                android:layout_width="@dimen/auto"
+                android:layout_height="wrap_content"
+                app:layout_constraintWidth_percent="@dimen/content_width_percent"
+                app:layout_constraintTop_toBottomOf="@id/aboutUsServerTitle"
+                app:layout_constraintBottom_toTopOf="@id/aboutUsIdeaTitle"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginTop="@dimen/post_image_title_body_between_margin"
+                android:text="علی حمرانی"
+                android:textAlignment="center"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/Accent"
+                android:textStyle="bold"
+                android:justificationMode="inter_word"
+                android:id="@+id/aboutUsServer"/>
+
+            <TextView
+                android:layout_width="@dimen/auto"
+                android:layout_height="wrap_content"
+                app:layout_constraintWidth_percent="@dimen/content_width_percent"
+                app:layout_constraintTop_toBottomOf="@id/aboutUsServer"
+                app:layout_constraintBottom_toTopOf="@id/aboutUsIdea1"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginTop="@dimen/post_image_title_body_between_margin"
+                android:text="ایده پردازی"
+                android:textAlignment="center"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/PrimaryVariant"
+                android:textStyle="bold"
+                android:justificationMode="inter_word"
+                android:id="@+id/aboutUsIdeaTitle"/>
+
+            <TextView
+                android:layout_width="@dimen/auto"
+                android:layout_height="wrap_content"
+                app:layout_constraintWidth_percent="@dimen/content_width_percent"
+                app:layout_constraintTop_toBottomOf="@id/aboutUsIdeaTitle"
+                app:layout_constraintBottom_toTopOf="@id/aboutUsIdea2"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginTop="@dimen/post_image_title_body_between_margin"
+                android:text="سعید استادعلی‌اکبری"
+                android:textAlignment="center"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/Accent"
+                android:textStyle="bold"
+                android:justificationMode="inter_word"
+                android:id="@+id/aboutUsIdea1"/>
+
+            <TextView
+                android:layout_width="@dimen/auto"
+                android:layout_height="wrap_content"
+                app:layout_constraintWidth_percent="@dimen/content_width_percent"
+                app:layout_constraintTop_toBottomOf="@id/aboutUsIdea1"
+                app:layout_constraintBottom_toBottomOf="@id/wavesPlaceHolder"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginTop="@dimen/post_image_title_body_between_margin"
+                android:text="احمدرضا نوروزی"
+                android:textAlignment="center"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/Accent"
+                android:textStyle="bold"
+                android:justificationMode="inter_word"
+                android:id="@+id/aboutUsIdea2"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+        
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/auto"
+        app:layout_constraintHeight_percent="@dimen/header_height_percent"
+        layout="@layout/header_back"
+        android:id="@+id/header"/>
+    
+    <include
+        android:layout_width="@dimen/auto"
+        android:layout_height="@dimen/auto"
+        app:layout_constraintTop_toBottomOf="@id/statusbarPlaceholder"
+        app:layout_constraintLeft_toLeftOf="@id/header"
+        app:layout_constraintRight_toRightOf="@id/header"
+        app:layout_constraintBottom_toBottomOf="@id/header"
+        android:layout_marginBottom="@dimen/waves_height"
+        layout="@layout/header_content"
+        android:animateLayoutChanges="true"
+        android:id="@+id/headerSpace"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

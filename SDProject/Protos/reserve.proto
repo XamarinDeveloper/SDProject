@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package reserve;
+
+import "google/protobuf/timestamp.proto";
+
+option go_package = "/reservepb";
+option csharp_namespace = "GrpcServer.Counsell";
+
+service ReserveService {
+    rpc Reserve (ReserveRequest) returns (ReserveResponse) {};
+}
+
+
+
+message ReserveRequest {
+    int32 user_id = 1;
+    int32 consultant_id = 2;
+    google.protobuf.Timestamp start = 3;
+    string current_password = 4;
+}
+
+message ReserveResponse {
+    
+}

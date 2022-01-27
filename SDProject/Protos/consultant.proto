@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+package consultant;
+
+option go_package = "/consultantpb";
+option csharp_namespace = "GrpcServer.Counsell";
+
+service ConsultantService {
+    rpc FindConsultant(FindConsultantRequest) returns (FindConsultantResponse) {};
+    rpc FindAllConsultants(FindAllConsultantsRequest) returns (FindAllConsultantsResponse) {};
+}
+
+message Consultant {
+    int32 id = 1;
+    string phone = 2;
+    string name = 3;
+    string family = 4;
+    string description = 5;
+}
+
+message FindConsultantRequest {
+    int32 consultant_id = 1;
+}
+
+message FindConsultantResponse {
+    Consultant consultant = 1;
+}
+message FindAllConsultantsRequest {
+
+}
+
+message FindAllConsultantsResponse {
+    repeated Consultant consultants = 1;
+} 
